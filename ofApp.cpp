@@ -7,7 +7,7 @@
 
 /******************************
 ******************************/
-ofApp::ofApp()
+ofApp::ofApp(bool _b_Play_EnjoyingMusic)
 : Mask_Scan(MASK_SCAN::getInstance())
 , Mask_Invert(MASK_INVERT::getInstance())
 , Mask_Random(MASK_RANDOM::getInstance())
@@ -18,6 +18,7 @@ ofApp::ofApp()
 , d_DispPos_to_Center(1.0)
 , png_id(0)
 , t_LastINT(0)
+, b_Play_EnjoyingMusic(_b_Play_EnjoyingMusic)
 {
 	fp_Log = fopen("../../../data/Log.csv", "w");
 	
@@ -97,7 +98,7 @@ void ofApp::setup(){
 	
 	/* */
 	setup_sound(sound_Enjoying, "sound/main/Enjoy/bbc-051117-Smoky-Jazz-Music-Full-Mix.mp3", true, 0.0);
-	sound_Enjoying.play();
+	if(b_Play_EnjoyingMusic)	sound_Enjoying.play();
 	
 	setup_sound(sound_Noise, "sound/main/radio-tuning-noise-short-waves_zydE-HEd.mp3", true, 0.0);
 	sound_Noise.play();

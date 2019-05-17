@@ -104,6 +104,8 @@ private:
 	
 	/********************
 	********************/
+	bool b_Play_EnjoyingMusic;
+	
 	ofSoundPlayer sound_Ambient[NUM_AMBIENT_SOUND];
 	ofSoundPlayer sound_Pi;
 	ofSoundPlayer sound_MoveToCenter;
@@ -182,7 +184,7 @@ private:
 public:
 	/****************************************
 	****************************************/
-	ofApp();
+	ofApp(bool _b_Play_EnjoyingMusic);
 	~ofApp();
 	
 	void setup();
